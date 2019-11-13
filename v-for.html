@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Directive - V-for</title>
+    </head>
+    <body>
+        <div id="dw">
+            <ul class="list-group">
+                <li v-for="language in languages">
+                    I'am learning <b>{{language}}</b>
+                </li>
+            </ul>
+            <br>
+            <ul class="list-group">
+                <li v-for="langdet in languages_detail">
+                    Saya ahli {{langdet.name}} dengan presentase keahlian {{langdet.percent}}
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="https://unpkg.com/vue@2.5.6/dist/vue.js"></script>
+        <script type="text/javascript">
+            new Vue({
+                el: '#dw',
+                data: {
+                    languages: [
+                        'PHP',
+                        'Javascript',
+                        'Ruby',
+                        'Python'
+                    ],
+                    languages_detail: [
+                        {
+                            'name': 'Java',
+                            'percent': '90%'
+                        },
+                        {
+                            'name': 'Golang',
+                            'percent': '70%'
+                        },
+                        {
+                            'name': 'MySQL',
+                            'percent': '92%'
+                        }
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>

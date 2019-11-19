@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Computed Properties 2</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="de" class="container">
+            <h1>Siswa yang memiliki nilai diatas 25 sebanyak = {{ tertinggi.length }} orang</h1>
+            <ul class="list-group">
+                <li v-for="siswa in siswas" class="list-group-item">
+                    {{ siswa.nama }} Belajar "{{ siswa.matkul }}" 
+                    dan mendapatkan nilai {{ siswa.nilai }}.
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="https://unpkg.com/vue@2.5.6/dist/vue.js"></script>
+        <script type="text/javascript">
+            new Vue({
+                el: '#de',
+                data: {
+                    siswas: [
+                        {
+                            matkul: 'VueJS',
+                            nama: 'Lorem',
+                            nilai: 28
+                        },
+                        {
+                            matkul: 'PHP',
+                            nama: 'Ipsum',
+                            nilai: 23
+                        },
+                        {
+                            matkul: 'Javascript',
+                            nama: 'Dolor',
+                            nilai: 29
+                        },
+                        {
+                            matkul: 'JAVA',
+                            nama: 'Amet',
+                            nilai: 12
+                        },
+                        {
+                            matkul: 'Golang',
+                            nama: 'MJ Fauzy',
+                            nilai: 99
+                        }
+                    ]
+                },
+                computed: {
+                    tertinggi: function() {
+                        return this.siswas.filter(function(item) {
+                            return item.nilai > 25;
+                        });
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

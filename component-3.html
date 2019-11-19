@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Component 3</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    </head>
+    <body>
+        <div id="dw" class="container">
+            <dw-paragraf isi="Ini paragraf 1"></dw-paragraf>
+            <dw-paragraf isi="Ini paragraf 2"></dw-paragraf>
+            <dw-paragraf isi="Ini paragraf 3"></dw-paragraf>
+            <dw-paragraf isi="Ini paragraf 4"></dw-paragraf>
+        </div>
+
+        <script type="text/javascript" src="https://unpkg.com/vue@2.5.6/dist/vue.js"></script>
+        <template id="dw-paragraf">
+            <h1>{{ isi }}</h1>
+        </template>
+        <script type="text/javascript">
+            Vue.component('dw-paragraf', {
+                props: ['isi'],
+                template: '#dw-paragraf'
+            });
+            new Vue({
+                el: '#dw'
+            });
+        </script>
+    </body>
+</html>
